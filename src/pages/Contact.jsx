@@ -3,16 +3,14 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
-  FaArrowUp,
   FaComments,
 } from "react-icons/fa";
 import ContactClients from "../components/ContactClients";
 
-function Contact() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+// 👇 Import your hero background image (replace path if needed)
+import contactHeroBg from "/src/assets/images/Home/bg-home2.png";
 
+function Contact() {
   const contactCards = [
     {
       icon: <FaEnvelope className="w-8 h-8" />,
@@ -49,73 +47,78 @@ function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-black to-black"></div>
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-[#f4a702]/15 to-orange-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-orange-600/15 to-[#f4a702]/10 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#f4a702]/8 via-orange-600/8 to-[#f4a702]/8 blur-3xl"></div>
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div className="min-h-screen text-white relative overflow-hidden">
+      {/* ---------------- HERO SECTION (with background image) ---------------- */}
+      <div
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${contactHeroBg})` }}
+      >
+        {/* Subtle overlay for readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-24">
-        {/* Breadcrumb */}
-        <div className="border-t border-[#f4a702]/30 pt-8 mb-6">
-          <div className="flex items-center justify-center gap-2 text-sm">
-            <a
-              href="/"
-              className="hover:text-[#f4a702] transition-colors font-medium text-gray-300"
+        {/* Hero content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-24">
+          {/* Breadcrumb */}
+          <div className="border-t border-[#f4a702]/30 pt-8 mb-0">
+            <div className="flex items-center justify-center gap-1 text-sm">
+              <a
+                href="/"
+                className="hover:text-[#f4a702] transition-colors font-medium text-gray-300"
+              >
+                HOME
+              </a>
+              <span className="text-gray-400">/</span>
+              <span className="text-gray-400 font-medium">CONTACT</span>
+            </div>
+          </div>
+
+          {/* Heading */}
+          <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mt-8">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#f4a702] via-orange-400 to-[#f4a702]">
+                Get in touch!
+              </span>
+            </h1>
+
+            <p className="max-w-2xl text-center text-gray-200 text-sm md:text-base">
+              Have a brief, a spark of an idea, or a full roadmap? Tell us where
+              you want to go—let's build it together.
+            </p>
+
+            {/* Send Message button */}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("contact-second")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+              className="mt-2 inline-flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full hover:bg-[#f4a702] hover:text-white transition-all font-semibold border border-gray-300"
             >
-              HOMEPAGE
-            </a>
-            <span className="text-gray-400">/</span>
-            <span className="text-gray-400 font-medium">CONTACT</span>
+              Send Message
+              <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                <svg
+                  className="w-4 h-4 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </div>
+            </button>
           </div>
         </div>
+      </div>
 
-        {/* Heading */}
-        <div className="flex flex-col items-center justify-center min-h-[60vh] pt-16 md:pt-28 lg:pt-36 space-y-6">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#f4a702] via-orange-400 to-[#f4a702]">
-              Get in touch!
-            </span>
-          </h1>
-
-          <p className="max-w-2xl text-center text-gray-300/90 text-sm md:text-base">
-            Have a brief, a spark of an idea, or a full roadmap? Tell us where
-            you want to go—let's build it together.
-          </p>
-
-          {/* Send Message button */}
-          <button
-            onClick={() =>
-              document
-                .getElementById("contact-form")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="mt-2 inline-flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full hover:bg-[#f4a702] hover:text-white transition-all font-semibold border border-gray-300"
-          >
-            Send Message
-            <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
-              <svg
-                className="w-4 h-4 text-black"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
-
-        {/* Contact Cards Section - Premium Design */}
-        <div className="my-24 px-4">
+      {/* ---------------- SECOND SECTION ---------------- */}
+      <div id="contact-second" className="relative bg-black">
+        {/* Contact Cards Section */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactCards.map((card, index) => (
               <a
@@ -137,7 +140,7 @@ function Contact() {
                   </div>
 
                   <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center">
-                    {/* Icon Container with Title - Always Centered */}
+                    {/* Icon + Title */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 transition-all duration-700 group-hover:translate-y-[-60px] group-hover:mt-8">
                       <div className="w-20 h-20 rounded-3xl bg-[#f4a702]/10 backdrop-blur-md flex items-center justify-center text-[#f4a702] shadow-lg border-2 border-[#f4a702]/30 transition-all duration-700 group-hover:bg-[#f4a702] group-hover:text-black group-hover:scale-110 group-hover:border-[#f4a702]">
                         {card.icon}
@@ -147,7 +150,7 @@ function Contact() {
                       </h3>
                     </div>
 
-                    {/* Content - Slides up on hover */}
+                    {/* Bottom Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 space-y-3">
                       <p className="text-sm text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
                         {card.description}
@@ -175,7 +178,7 @@ function Contact() {
                     </div>
                   </div>
 
-                  {/* Shine Effect on Hover */}
+                  {/* Shine Effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#f4a702]/10 via-transparent to-transparent"></div>
                   </div>
@@ -185,6 +188,7 @@ function Contact() {
           </div>
         </div>
 
+        {/* Clients Logos */}
         <ContactClients />
 
         {/* Map Section */}
@@ -198,19 +202,6 @@ function Contact() {
             title="Office Location Map"
           />
         </div>
-      </div>
-
-      {/* Back to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-[#f4a702] to-orange-600 text-black rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:shadow-[#f4a702]/50 transition-all hover:scale-110 z-50"
-      >
-        <FaArrowUp className="text-lg" />
-      </button>
-
-      {/* Back to Top Text */}
-      <div className="hidden lg:block fixed bottom-8 right-24 text-sm text-gray-400 tracking-widest">
-        BACK TO TOP
       </div>
     </div>
   );

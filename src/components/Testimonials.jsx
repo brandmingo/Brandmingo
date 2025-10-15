@@ -348,13 +348,15 @@ function Testimonials() {
               TESTIMONIALS
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-              Panda Love Praise!
+              Brandmingo Love Praise!
             </h2>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
               We're not just about getting results; we're about making our
               clients feel like rockstars. Don't take our word for it—hear from
               the legends who've joined the{" "}
-              <span className="text-white font-semibold">Panda revolution</span>
+              <span className="text-white font-semibold">
+                Brandmingo revolution
+              </span>
               .
             </p>
           </div>

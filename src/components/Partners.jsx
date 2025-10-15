@@ -358,7 +358,96 @@
 
 // export default Partners;
 
+// import React from "react";
+
+// function Partners() {
+//   const partners = [
+//     {
+//       image: "/src/assets/images/Partners/Shopify-agency.png",
+//       alt: "Shopify Partner",
+//     },
+//     {
+//       image: "/src/assets/images/Partners/partner3.png",
+//       alt: "Meta Business Partner",
+//     },
+//     {
+//       image: "/src/assets/images/Partners/Google-Partner-Logo.png",
+//       alt: "Google Partner",
+//     },
+//   ];
+
+//   return (
+//     <div className="relative bg-black py-20 px-4 overflow-hidden">
+//       {/* Background gradient effects */}
+//       {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
+//       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600 rounded-full opacity-10 blur-3xl"></div> */}
+
+//       <div className="max-w-7xl mx-auto relative z-10">
+//         {/* Main Grid Container */}
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+//           {/* Left Side - Title */}
+//           <div className="text-left">
+//             <h3 className="text-2xl md:text-3xl font-light text-gray-300 mb-3 tracking-wide">
+//               Authorized
+//             </h3>
+//             <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
+//               Partners
+//             </h2>
+//             <p className="mt-6 text-gray-400 text-lg leading-relaxed">
+//               Trusted collaborations with industry leaders to deliver
+//               exceptional digital experiences.
+//             </p>
+//           </div>
+
+//           {/* Right Side - Partners Logos (Horizontal in one line) */}
+//           <div className="flex items-center justify-center gap-8 flex-wrap lg:flex-nowrap">
+//             {partners.map((partner, index) => (
+//               <div
+//                 key={index}
+//                 className="group relative flex-1 min-w-[150px] max-w-[250px]"
+//               >
+//                 {/* Card Container */}
+//                 <div className="relative bg-zinc-900 rounded-2xl p-6 border-2 border-zinc-800 transition-all duration-500 hover:border-orange-500 cursor-pointer overflow-hidden">
+//                   {/* Orange glow effect on hover */}
+//                   <div className="absolute inset-0 bg-orange-500 opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl"></div>
+
+//                   {/* Animated orange border glow */}
+//                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+//                     <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent animate-pulse"></div>
+//                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent animate-pulse"></div>
+//                   </div>
+
+//                   {/* Logo Image */}
+//                   <div className="relative flex items-center justify-center h-16">
+//                     <img
+//                       src={partner.image}
+//                       alt={partner.alt}
+//                       className="max-h-full w-auto object-contain filter brightness-0 invert transition-all duration-500 group-hover:scale-110 group-hover:brightness-100 group-hover:invert-0"
+//                     />
+
+//                     {/* Orange overlay on image hover */}
+//                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/20 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+//                   </div>
+
+//                   {/* Bottom decorative line */}
+//                   <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-700"></div>
+
+//                   {/* Corner accent animation */}
+//                   <div className="absolute top-0 right-0 w-0 h-0 border-t-2 border-r-2 border-orange-500 opacity-0 group-hover:opacity-100 group-hover:w-6 group-hover:h-6 transition-all duration-500"></div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Partners;
+
 import React from "react";
+import gradientBg from "/src/assets/images/Home/home-5.png";
 
 function Partners() {
   const partners = [
@@ -377,62 +466,48 @@ function Partners() {
   ];
 
   return (
-    <div className="relative bg-black py-20 px-4 overflow-hidden">
-      {/* Background gradient effects */}
-      {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600 rounded-full opacity-10 blur-3xl"></div> */}
-
+    <div
+      className="relative py-20 px-4 overflow-hidden bg-center bg-cover bg-no-repeat"
+      style={{ backgroundImage: `url(${gradientBg})` }}
+    >
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Main Grid Container */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Side - Title */}
+          {/* Left */}
           <div className="text-left">
-            <h3 className="text-2xl md:text-3xl font-light text-gray-300 mb-3 tracking-wide">
+            <h3 className="text-2xl md:text-3xl font-light text-white mb-3 tracking-wide">
               Authorized
             </h3>
             <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
               Partners
             </h2>
-            <p className="mt-6 text-gray-400 text-lg leading-relaxed">
+            <p className="mt-6 text-white text-lg leading-relaxed">
               Trusted collaborations with industry leaders to deliver
               exceptional digital experiences.
             </p>
           </div>
 
-          {/* Right Side - Partners Logos (Horizontal in one line) */}
+          {/* Right */}
           <div className="flex items-center justify-center gap-8 flex-wrap lg:flex-nowrap">
             {partners.map((partner, index) => (
               <div
                 key={index}
                 className="group relative flex-1 min-w-[150px] max-w-[250px]"
               >
-                {/* Card Container */}
                 <div className="relative bg-zinc-900 rounded-2xl p-6 border-2 border-zinc-800 transition-all duration-500 hover:border-orange-500 cursor-pointer overflow-hidden">
-                  {/* Orange glow effect on hover */}
-                  <div className="absolute inset-0 bg-orange-500 opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl"></div>
+                  {/* REMOVED orange bg glow overlay */}
+                  {/* REMOVED orange image overlay */}
 
-                  {/* Animated orange border glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent animate-pulse"></div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent animate-pulse"></div>
-                  </div>
-
-                  {/* Logo Image */}
+                  {/* Logo */}
                   <div className="relative flex items-center justify-center h-16">
                     <img
                       src={partner.image}
                       alt={partner.alt}
-                      className="max-h-full w-auto object-contain filter brightness-0 invert transition-all duration-500 group-hover:scale-110 group-hover:brightness-100 group-hover:invert-0"
+                      className="max-h-full w-auto object-contain filter brightness-0 invert transition-all duration-500 group-hover:scale-110"
                     />
-
-                    {/* Orange overlay on image hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/20 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
 
-                  {/* Bottom decorative line */}
+                  {/* Keep subtle decorations if you like */}
                   <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-700"></div>
-
-                  {/* Corner accent animation */}
                   <div className="absolute top-0 right-0 w-0 h-0 border-t-2 border-r-2 border-orange-500 opacity-0 group-hover:opacity-100 group-hover:w-6 group-hover:h-6 transition-all duration-500"></div>
                 </div>
               </div>
